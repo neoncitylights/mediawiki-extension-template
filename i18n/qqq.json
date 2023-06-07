@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"{{author}}"
+		]
+	},
+	"{{extension-lc}}-desc": "A description of the MediaWiki extension",
+	"mycoolextension-helloworld": "A message that shows on Special:HelloWorld"
+}

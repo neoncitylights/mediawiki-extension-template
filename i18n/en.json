@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"{{author}}"
+		]
+	},
+	"{{extension-lc}}-desc": "This is my super duper cool extension",
+	"mycoolextension-helloworld": "A message that shows on Special:HelloWorld"
+}

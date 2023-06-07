@@ -1,0 +1,25 @@
+{
+	"name": "{{extension-uc}}",
+	"version": "1.0.0",
+	"author": [
+		"{{author}}"
+	],
+	"license-name": "MIT",
+	"url": "https://www.mediawiki.org/wiki/Extension:{{extension-uc}}",
+	"descriptionmsg": "{{extension-lc}}-desc",
+	"type": "other",
+	"MessagesDirs": {
+		"{{extension-uc}}": [
+			"i18n"
+		]
+	},
+	"AutoloadNamespaces": {
+		"{{extension-uc}}\\": "includes/"
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "{{extension-uc}}"
+	},
+	"ResourceModules": {},
+	"manifest_version": 2
+}

@@ -1,0 +1,37 @@
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "chore(deps/composer):"
+    labels:
+      - "t-dependencies"
+      - "pkg-composer"
+    open-pull-requests-limit: 4
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "chore(deps/npm):"
+    labels:
+      - "t-dependencies"
+      - "pkg-npm"
+    open-pull-requests-limit: 4
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "chore(deps/actions):"
+      include: "scope"
+    labels:
+      - "t-dependencies"
+      - "pkg-gh-actions"
+    open-pull-requests-limit: 4
