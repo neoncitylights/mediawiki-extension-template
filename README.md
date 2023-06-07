@@ -9,6 +9,7 @@ This repository template is designed to allow quickly building open-source Media
 - [ ] Show examples of creating a MediaWiki Action API module
 - [ ] Show examples of creating a MediaWiki REST API endpoint
 - [ ] Show examples of using ResourceLoader
+- [ ] Integrate GitHub Actions for CI/CD
 
 ## Get started
 
