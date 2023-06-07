@@ -4,11 +4,11 @@ This repository template is designed to allow quickly building open-source Media
 
 ## Roadmap
 
-- [ ] Show examples of creating a special page
-- [ ] Show examples of using MediaWiki hooks
-- [ ] Show examples of creating a MediaWiki Action API module
+- [ ] Show examples of creating a [special page](https://www.mediawiki.org/wiki/Manual:Special_pages)
+- [ ] Show examples of using [MediaWiki hooks](https://www.mediawiki.org/wiki/Manual:Hooks)
+- [ ] Show examples of creating a [MediaWiki Action API](https://www.mediawiki.org/wiki/API:Main_page) module
 - [ ] Show examples of creating a MediaWiki REST API endpoint
-- [ ] Show examples of using ResourceLoader
+- [ ] Show examples of using [ResourceLoader](https://www.mediawiki.org/wiki/ResourceLoader) (MediaWiki's bundler system, comparable to software like Webpack, esbuild, and Rollup)
 - [ ] Integrate GitHub Actions for CI/CD
 
 ## Get started
