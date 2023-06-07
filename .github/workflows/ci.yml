@@ -95,6 +95,8 @@ jobs:
       with:
         php-version: ${{ env.PHP_LATEST }}
         tools: composer:v2
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
     - name: Run PHPUnit tests
       run: composer test
 
