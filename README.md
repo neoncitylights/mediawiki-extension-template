@@ -9,6 +9,7 @@ This repository template is designed to allow quickly building open-source Media
 - [ ] Show examples of creating a [MediaWiki Action API](https://www.mediawiki.org/wiki/API:Main_page) module
 - [ ] Show examples of creating a MediaWiki REST API endpoint
 - [ ] Show examples of using [ResourceLoader](https://www.mediawiki.org/wiki/ResourceLoader) (MediaWiki's bundler system, comparable to software like Webpack, esbuild, and Rollup)
+- [ ] Show examples of using PHPUnit with MediaWiki's core test infrastructure
 - [ ] Integrate GitHub Actions for CI/CD
 
 ## Get started
@@ -59,12 +60,13 @@ wfLoadExtension( 'BoilerPlate' ); // Replace "BoilerPlate" with the name of your
 
 ## Setup and configure
 
-- MediaWiki extension configuration: [`extension.json`](./extension.json)
-- NPM configuration: [`package.json`](./package.json)
-- Composer configuration: [`composer.json`](./composer.json)
-- Localization and translated messages: [`i18n/`](./i18n/)
-- ESLint (JS linter): [`.eslintrc.json`](./.eslintrc.json), [`.eslintignore`](./.eslintignore)
-- Gruntfile (JS task runner): [`Gruntfile.js`](./Gruntfile.js)
-- Stylelint (CSS linter): [`.stylelintrc.json`](./.stylelintrc.json), [`.stylelintignore`](./.stylelintignore)
-- PHPCS (PHP linter): [`phpcs.xml`](./phpcs.xml)
-- PHPUnit (PHP unit testing framework): [`phpunit.xml.dist`](./phpunit.xml.dist)
+- MediaWiki extension configuration: [`extension.json`](./extension.json) • [[docs](https://www.mediawiki.org/wiki/Manual:Extension.json), [schema reference](https://www.mediawiki.org/wiki/Manual:Extension.json/Schema)]
+- NPM configuration: [`package.json`](./package.json) • [[docs](https://docs.npmjs.com/cli/v9/configuring-npm/package-json), [website](https://www.npmjs.com/), [repo](https://github.com/npm/cli)]
+- Composer configuration: [`composer.json`](./composer.json) • [[docs](https://getcomposer.org/doc/04-schema.md), [website](https://getcomposer.org/), [repo](https://github.com/composer/composer)]
+- Localization and translated messages: [`i18n/`](./i18n/) • [[docs](https://www.mediawiki.org/wiki/Localisation)]
+- ESLint (JS linter): [`.eslintrc.json`](./.eslintrc.json), [`.eslintignore`](./.eslintignore) • [[docs](https://eslint.org/docs/latest/use/configure/), [website](https://eslint.org/), [repo](https://github.com/eslint/eslint)]
+- Gruntfile (JS task runner): [`Gruntfile.js`](./Gruntfile.js) • [[docs](https://gruntjs.com/configuring-tasks), [website](https://gruntjs.com/), [repo](https://github.com/gruntjs/grunt)]
+- Stylelint (CSS linter): [`.stylelintrc.json`](./.stylelintrc.json), [`.stylelintignore`](./.stylelintignore) • [[docs](https://stylelint.io/docs/user-guide/configuration), [website](https://stylelint.io/), [repo](https://github.com/stylelint/stylelint)]
+- PHPCS (PHP linter): [`phpcs.xml`](./phpcs.xml) • [[repo](https://github.com/squizlabs/PHP_CodeSniffer)]
+- PHPUnit (PHP unit testing framework): [`phpunit.xml.dist`](./phpunit.xml.dist) • [[docs](https://docs.phpunit.de/en/10.2/configuration.html), [website](https://phpunit.de/), [repo](https://github.com/sebastianbergmann/phpunit)]
+- Dependabot (dependency update automation): [`.github/dependabot.yml`](./.github/dependabot.yml) • [[docs](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file)]
