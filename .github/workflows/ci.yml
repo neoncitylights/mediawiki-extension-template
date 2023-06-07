@@ -63,6 +63,8 @@ jobs:
       with:
         php-version: ${{ env.PHP_LATEST }}
         tools: composer:v2
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
     - name: Lint PHP with PHPCS, php-parallel-lint
       run: composer test
 
@@ -73,7 +75,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: latest
         cache: 'npm'
