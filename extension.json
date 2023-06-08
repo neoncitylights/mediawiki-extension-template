@@ -14,7 +14,10 @@
 		]
 	},
 	"AutoloadNamespaces": {
-		"{{extension-uc}}\\": "includes/"
+		"MediaWiki\\Extensions\\{{extension-uc}}\\": "includes/"
+	},
+	"SpecialPages": {
+		"HelloWorld": "MediaWiki\\Extensions\\{{extension-uc}}\\Special\\SpecialHelloWorld"
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
