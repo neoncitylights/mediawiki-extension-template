@@ -1,0 +1,40 @@
+name: Quibble
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      quibble_image: quibble-buster-php74
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install quibble
+        run: docker pull docker-registry.wikimedia.org/releng/${{ quibble_image }}:latest
+      - name: Initialize bare git repositories
+        run: |
+          mkdir -p ref/mediawiki/skins
+          git clone --bare --depth 1 https://gerrit.wikimedia.org/r/mediawiki/core ref/mediawiki/core.git
+          git clone --bare --depth 1 https://gerrit.wikimedia.org/r/mediawiki/vendor ref/mediawiki/vendor.git
+          git clone --bare --depth 1 https://gerrit.wikimedia.org/r/mediawiki/skins/Vector ref/mediawiki/skins/Vector.git
+      - name: Setup directories and permissions
+        run: |
+          mkdir cache
+          chmod 777 cache
+          mkdir -p log
+          chmod 777 log
+          mkdir -p src
+          chmod 777 src
+      - name: Run MediaWiki Docker container
+        run: |
+          docker run -i --rm \
+            -v "$(pwd)"/cache:/cache \
+            -v "$(pwd)"/log:/workspace/log \
+            -v "$(pwd)"/ref:/srv/git:ro \
+            -v "$(pwd)"/src:/workspace/src \
+            docker-registry.wikimedia.org/releng/${{ quibble_image }}:latest
