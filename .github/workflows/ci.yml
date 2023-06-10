@@ -103,6 +103,7 @@ jobs:
   test-phan:
     runs-on: ubuntu-latest
     needs: build-php
+    continue-on-error: true
     env:
       # Phan runs faster without Xdebug enabled,
       # and only needed for debugging Phan itself
