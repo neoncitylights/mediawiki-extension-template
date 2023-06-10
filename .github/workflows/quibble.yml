@@ -4,15 +4,19 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      quibble_image: releng/quibble-buster-php74
     steps:
-      - uses: actions/checkout@v3
-      - name: install quibble
-        run: docker pull docker-registry.wikimedia.org/releng/quibble-buster-php74:latest
-      - name: initialize bare git repos
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install quibble
+        run: docker pull docker-registry.wikimedia.org/releng/${{ quibble_image }}:latest
+      - name: Initialize bare git repositories
         run: |
           mkdir -p ref/mediawiki/skins
           git clone --bare --depth 1 https://gerrit.wikimedia.org/r/mediawiki/core ref/mediawiki/core.git
@@ -33,4 +37,4 @@ jobs:
             -v "$(pwd)"/log:/workspace/log \
             -v "$(pwd)"/ref:/srv/git:ro \
             -v "$(pwd)"/src:/workspace/src \
-            docker-registry.wikimedia.org/releng/quibble-buster-php74:latest
+            docker-registry.wikimedia.org/releng/${{ quibble_image }}:latest
