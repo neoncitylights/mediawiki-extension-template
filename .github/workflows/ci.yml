@@ -110,7 +110,7 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ env.PHP_LATEST }}
-        tools: composer:v2, phan
+        tools: composer:v2
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
     - name: Run PHPUnit tests
