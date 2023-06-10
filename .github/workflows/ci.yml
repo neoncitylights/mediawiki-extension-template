@@ -111,8 +111,10 @@ jobs:
       with:
         php-version: ${{ env.PHP_LATEST }}
         tools: composer:v2
-    - name: Install dependencies
+    - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress
+    - name: Install php-ast dependency
+      run: sudo apt-get install -y php-ast
     - name: Run PHPUnit tests
       run: composer phan
 
