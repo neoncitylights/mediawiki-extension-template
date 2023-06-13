@@ -135,6 +135,7 @@ jobs:
       - lint-php
       - lint-grunt
       - test-phpunit
+      - test-phan
     steps:
       - name: ✅ CI succeeded
         run: exit 0
