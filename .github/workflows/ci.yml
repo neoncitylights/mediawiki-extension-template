@@ -50,7 +50,7 @@ jobs:
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
           ${{ runner.os }}-php-
-    - name: Install dependencies
+    - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress
 
   lint-php:
@@ -64,7 +64,7 @@ jobs:
       with:
         php-version: ${{ env.PHP_LATEST }}
         tools: composer:v2
-    - name: Install dependencies
+    - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress
     - name: Lint PHP with PHPCS, php-parallel-lint
       run: composer test
@@ -80,7 +80,7 @@ jobs:
       with:
         node-version: latest
         cache: 'npm'
-    - name: Install dependencies
+    - name: Install NPM dependencies
       run: npm ci
     - name: Run Grunt tasks
       run: npm run test
@@ -96,7 +96,7 @@ jobs:
       with:
         php-version: ${{ env.PHP_LATEST }}
         tools: composer:v2
-    - name: Install dependencies
+    - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress
     - name: Run PHPUnit tests
       run: composer test
