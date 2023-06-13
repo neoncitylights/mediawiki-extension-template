@@ -105,7 +105,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-php
     continue-on-error: true
-    if: ${{ env.ENABLE_JOB_PHAN == 'true' }}
+    if: ${{ vars.ENABLE_JOB_PHAN }} == 'true'
     env:
       # Phan runs faster without Xdebug enabled,
       # and only needed for debugging Phan itself
