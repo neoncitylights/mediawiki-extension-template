@@ -123,7 +123,7 @@ In the MediaWiki ecosystem, we use `composer.json` mostly for developer dependen
 If your extension depends on other MediaWiki extensions to work (e.g BetaFeatures, Echo, etc.), you can add them to the `extension.json` file via the [`requires.extensions`](https://www.mediawiki.org/wiki/Manual:Extension.json/Schema#requires) key.
 
 > **Note**
-> It is also important to note that unlike other ecosystems where it's common to use semantic versioning (e.g. `^1.2.3`), we use a different versioning scheme, and different MediaWiki extensions will vary in their [compatibility policy](https://www.mediawiki.org/wiki/Compatibility#MediaWiki_extensions). Some special notes:
+> Unlike other ecosystems where it's common to use semantic versioning (e.g. `^1.2.3`), MediaWiki extensions use a different versioning scheme, and different extensions will vary in their [compatibility policy](https://www.mediawiki.org/wiki/Compatibility#MediaWiki_extensions). Some special notes:
 >
 > - You can use any version syntax that [Composer supports](https://getcomposer.org/doc/articles/versions.md).
 > - A wildcard (`*`) means that any version of the extension is acceptable.
