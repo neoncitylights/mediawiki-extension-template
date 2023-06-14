@@ -17,7 +17,7 @@
 		"MediaWiki\\Extensions\\{{extension-uc}}\\": "includes/"
 	},
 	"SpecialPages": {
-		"HelloWorld": "MediaWiki\\Extensions\\{{extension-uc}}\\Special\\SpecialHelloWorld"
+		"HelloWorld": "MediaWiki\\Extensions\\{{extension-uc}}\\Specials\\SpecialHelloWorld"
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
