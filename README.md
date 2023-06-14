@@ -80,7 +80,7 @@ wfLoadExtension( 'BoilerPlate' ); // Replace "BoilerPlate" with the name of your
 
 ### Configuring the minimum-supported PHP version
 
-> **Note**:
+> **Note**
 > Please also keep in mind whether or not the minimum MediaWiki version you're running against supports that specific PHP version.
 
 There's a few different files you'll need to change.
