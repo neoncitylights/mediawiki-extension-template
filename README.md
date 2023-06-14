@@ -75,3 +75,59 @@ wfLoadExtension( 'BoilerPlate' ); // Replace "BoilerPlate" with the name of your
 - Phan (PHP static analysis): [`.phan/config.php`](./.phan/config.php) • [[mw.org docs](https://www.mediawiki.org/wiki/Continuous_integration/Phan), [phan repo](https://github.com/phan/phan/), [mw plugin repo](https://gerrit.wikimedia.org/g/mediawiki/tools/phan/SecurityCheckPlugin)]
 - PHPUnit (PHP unit testing framework): [`phpunit.xml.dist`](./phpunit.xml.dist) • [[docs](https://docs.phpunit.de/en/10.2/configuration.html), [website](https://phpunit.de/), [repo](https://github.com/sebastianbergmann/phpunit)]
 - Dependabot (dependency update automation): [`.github/dependabot.yml`](./.github/dependabot.yml) • [[docs](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file)]
+
+## Notes
+
+### Configuring the minimum-supported PHP version
+
+> **Note**:
+> Please also keep in mind whether or not the minimum MediaWiki version you're running against supports that specific PHP version.
+
+There's a few different files you'll need to change.
+
+- [`composer.json`](./composer.json): Change the `require.php` key. An example for supporting PHP 7.4 or greater:
+
+  ```json
+  "require": {
+    "php": ">=7.4"
+  }
+  ```
+
+- [`extension.json`](./extension.json): Change the [`requires.platform.php`](https://www.mediawiki.org/wiki/Manual:Extension.json/Schema#platform) key. To support PHP 7.4 or greater:
+
+  ```json
+  "requires": {
+    "platform": {
+      "php": "7.4"
+    }
+  }
+  ```
+
+- [`.github/workflows/ci.yml`](./.github/workflows/ci.yml): Change the `php-version` key in the `matrix` section.
+- [`.phan/config.php`](./.phan/config.php): Change the `minimum_target_php_version` key.
+- [`README.md`](./README.md): Change your main, **user-facing** documentation where the system requirements section is to reflect the minimum PHP version.
+
+### Configuring MediaWiki extension dependencies and minimum-supported MediaWiki version
+
+In the MediaWiki ecosystem, we use `composer.json` mostly for developer dependencies. However, we use `extension.json` overall for registering MediaWiki extensions (and `skin.json` for registering MediaWiki skins).
+
+If your extension depends on other MediaWiki extensions to work (e.g BetaFeatures, Echo, etc.), you can add them to the `extension.json` file via the [`requires.extensions`](https://www.mediawiki.org/wiki/Manual:Extension.json/Schema#requires) key.
+
+> **Note**
+> It is also important to note that unlike other ecosystems where it's common to use semantic versioning (e.g. `^1.2.3`), we use a different versioning scheme, and different MediaWiki extensions will vary in their [compatibility policy](https://www.mediawiki.org/wiki/Compatibility#MediaWiki_extensions). Some special notes:
+>
+> - You can use any version syntax that [Composer supports](https://getcomposer.org/doc/articles/versions.md).
+> - A wildcard (`*`) means that any version of the extension is acceptable.
+> - You can view an extension's compatibility policy by visiting their page on [MediaWiki.org](https://www.mediawiki.org/wiki/Category:Extensions_by_compatibility_policy).
+
+```json
+{
+	"requires": {
+		"MediaWiki": ">= 1.39",
+		"extensions": {
+			"BetaFeatures": "*",
+			"Echo": "*"
+		}
+	}
+}
+```
