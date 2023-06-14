@@ -16,7 +16,11 @@ This repository template is designed to allow quickly building open-source Media
 
 ### Prerequisites
 
-First, make sure you have a local [MediaWiki instance running](https://www.mediawiki.org/wiki/Manual:Installing_MediaWiki). There is also a guide to [installing MediaWiki with Vagrant](https://www.mediawiki.org/wiki/MediaWiki-Vagrant), which automatically provisions a virtual machine with a MediaWiki instance and all of its dependencies.
+First, make sure you have a local MediaWiki instance running. You can do this in a few ways:
+
+- Installing directly on your machine ([MacOS](https://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_macOS), [Windows](https://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_Windows)/[WSL](https://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_Windows_Subsystem_for_Linux), [Debian/Ubuntu](https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:Running_MediaWiki_on_Debian_or_Ubuntu), [others...](https://www.mediawiki.org/wiki/Manual:OS_specific_help))
+- [Installing with Vagrant](https://www.mediawiki.org/wiki/MediaWiki-Vagrant) [[GitHub repo (mirror)](https://github.com/wikimedia/mediawiki-vagrant), [Gerrit repo (source)](https://gerrit.wikimedia.org/g/mediawiki/vagrant)]: automatically provisions a virtual machine (via VirtualBox) with a MediaWiki instance and all of its dependencies
+- [Installing with MediaWiki-Docker](https://www.mediawiki.org/wiki/MediaWiki-Docker) [[Docker Hub](https://hub.docker.com/_/mediawiki), [repo](https://github.com/wikimedia/mediawiki-docker)]: Runs MediaWiki in a Docker container
 
 ### Creating a new repository
 
