@@ -45,7 +45,7 @@ Using your favorite text editor or IDE, find-and-replace the following placehold
 
 - `{{author}}`: Your own username/nickname, name, or organization
 - `{{extension-uc}}`: Name of your extension in upper CamelCase
-- `{{extension-lc}}`: Name of your extension in lower case
+- `{{extension-lc}}`: Name of your extension in lowercase
 
 ### Running the extension locally
 
@@ -78,6 +78,13 @@ wfLoadExtension( 'BoilerPlate' ); // Replace "BoilerPlate" with the name of your
 
 ## Notes
 
+### Setting up your local code editor/IDE environment
+
+**Intellisense** (or intelligent code completion) is supported by many code editors and IDEs. To make sure you have this enabled, you'll need to make sure you have your MediaWiki directory open, to avoid warnings like `Undefined type 'SpecialPage'`. There's also a few setups I recommend below, however you can use whatever works best for you. :-)
+
+- [Visual Studio Code](https://code.visualstudio.com/) (by Microsoft, free, open-source), with [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client), [PHP Debug](https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug) extensions installed
+- [PHPStorm](https://www.jetbrains.com/phpstorm/) (by JetBrains, closed-source), with the [MediaWiki Support](https://plugins.jetbrains.com/plugin/7439-mediawiki-support) plugin installed. This IDE has various pricing plans, but is [free for students/teachers](https://www.jetbrains.com/community/education/#students). MediaWiki.org also has an article about [requesting a JetBrains license key](https://www.mediawiki.org/wiki/JetBrains_IDEs) by contacting one of the account administrators.
+
 ### Configuring the minimum-supported PHP version
 
 > **Note**
@@ -109,6 +116,8 @@ There's a few different files you'll need to change.
 
 ### Configuring MediaWiki extension dependencies and minimum-supported MediaWiki version
 
+#### `extension.json`
+
 In the MediaWiki ecosystem, we use `composer.json` mostly for developer dependencies. However, we use `extension.json` overall for registering MediaWiki extensions (and `skin.json` for registering MediaWiki skins).
 
 If your extension depends on other MediaWiki extensions to work (e.g BetaFeatures, Echo, etc.), you can add them to the `extension.json` file via the [`requires.extensions`](https://www.mediawiki.org/wiki/Manual:Extension.json/Schema#requires) key.
@@ -130,4 +139,14 @@ If your extension depends on other MediaWiki extensions to work (e.g BetaFeature
 		}
 	}
 }
+```
+
+#### `README.md`
+
+You should also update your `README.md` instructions on how to install your extension, e.g the instructions for editing `LocalSettings.php` might look like:
+
+```php
+wfLoadExtension( 'BetaFeatures' );
+wfLoadExtension( 'Echo' );
+wfLoadExtension( 'BoilerPlate' );
 ```
