@@ -105,7 +105,7 @@ There's a few different files you'll need to change.
   ```json
   "requires": {
     "platform": {
-      "php": "7.4"
+      "php": ">= 7.4"
     }
   }
   ```
