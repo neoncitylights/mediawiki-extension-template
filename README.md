@@ -110,7 +110,7 @@ There's a few different files you'll need to change.
   }
   ```
 
-- [`.github/workflows/ci.yml`](./.github/workflows/ci.yml): Change the `php-version` key in the `matrix` section.
+- [`.github/workflows/ci.yml`](./.github/workflows/ci.yml): Change the `php` key in the `matrix` section.
 - [`.phan/config.php`](./.phan/config.php): Change the `minimum_target_php_version` key.
 - [`README.md`](./README.md): Change your main, **user-facing** documentation where the system requirements section is to reflect the minimum PHP version.
 
