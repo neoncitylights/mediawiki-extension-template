@@ -74,6 +74,7 @@ wfLoadExtension( 'BoilerPlate' ); // Replace "BoilerPlate" with the name of your
 - PHPCS (PHP linter): [`phpcs.xml`](./phpcs.xml) • [[repo](https://github.com/squizlabs/PHP_CodeSniffer)]
 - Phan (PHP static analysis): [`.phan/config.php`](./.phan/config.php) • [[mw.org docs](https://www.mediawiki.org/wiki/Continuous_integration/Phan), [phan repo](https://github.com/phan/phan/), [mw plugin repo](https://gerrit.wikimedia.org/g/mediawiki/tools/phan/SecurityCheckPlugin)]
 - PHPUnit (PHP unit testing framework): [`phpunit.xml.dist`](./phpunit.xml.dist) • [[docs](https://docs.phpunit.de/en/10.2/configuration.html), [website](https://phpunit.de/), [repo](https://github.com/sebastianbergmann/phpunit)]
+- Psalm (PHP security analysis): [`psalm.xml`](./psalm.xml) • [[docs](https://psalm.dev/docs/running_psalm/configuration/), [website](https://psalm.dev/), [repo](https://github.com/vimeo/psalm)]
 - Dependabot (dependency update automation): [`.github/dependabot.yml`](./.github/dependabot.yml) • [[docs](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file)]
 
 ## Notes
